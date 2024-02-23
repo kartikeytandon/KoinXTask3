@@ -1,0 +1,39 @@
+  .form-container {
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  font-size: 18px;
+}
+
+.form-container input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.company-list {
+  list-style: none;
+  padding: 0;
+}
+
+.company-list li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.company-list h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
