@@ -3,16 +3,18 @@ import axios from 'axios';
 import './Crypto.css';
 
 const Crypto = () => {
-  const [companies, setCompanies] = useState([]);
-  const [coin, setCoin] = useState('');
+  const [companies, setCompanies] = useState([])
+  const [coin, setCoin] = useState('')
+  const [error, setError] = useState(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(`http://localhost:8000/cryptoCompanies?coin=${coin}`);
+      const response = await axios.get(`https://helpful-duck-raincoat.cyclic.app/cryptoCompanies?coin=${coin}`);
       setCompanies(response.data.companies);
     } catch (error) {
       console.error('Error fetching companies:', error);
+      setError("This coin is not supported, try either of bitcoin or ethereum")
     }
   };
 
@@ -36,7 +38,7 @@ const Crypto = () => {
             ))}
           </>
         ) : (
-          <li>Search for Companies</li>
+          <li>{error}</li>
         )}
       </ul>
     </div>
